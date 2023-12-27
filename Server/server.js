@@ -21,3 +21,17 @@ app.post('/api/tasks', (req, res) => {
     tasks.push(newTask);
     res.json(newTask);
 });
+
+// Update a task
+app.put('/api/tasks/:id', (req, res) => {
+    const taskId = req.params.id;
+    const updatedTask = req.body;
+    const index = tasks.findIndex(task => task.id === taskId);
+
+    if (index !== -1) {
+        tasks[index] = updatedTask;
+        res.json(updatedTask);
+    } else {
+        res.status(404).json({ error: 'Task not found' });
+    }
+});
