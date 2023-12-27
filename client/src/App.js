@@ -26,6 +26,28 @@ function App() {
     const response = await axios.delete(`${API_URL}/${taskId}`);
     setTasks(tasks.filter(task => task.id !== response.data.id));
   };
+  return (
+    <div>
+      <h1>Task Tracker</h1>
+      <div>
+        <input
+          type="text"
+          placeholder="Add Task"
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
+        />
+        <button onClick={addTask}>Add</button>
+      </div>
+      <ul>
+        {tasks.map((task) => (
+          <li key={task.id}>
+            {task.name}
+            <button onClick={() => deleteTask(task.id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
   
 
 }
