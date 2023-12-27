@@ -35,3 +35,6 @@ app.put('/api/tasks/:id', (req, res) => {
         res.status(404).json({ error: 'Task not found' });
     }
 });
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
