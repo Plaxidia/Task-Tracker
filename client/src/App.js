@@ -12,9 +12,15 @@ function App() {
     fetchTasks();
   }, []);
   const fetchTasks = async () => {
-    const response = await axios.get(API_URL);
-    setTasks(response.data);
-  };
+    try {
+        const response = await axios.get(API_URL);
+        console.log('Server response:', response);
+        setTasks(response.data);
+    } catch (error) {
+        console.error('Error fetching tasks:', error);
+    }
+};
+
   const addTask = async () => {
     if (newTask.trim() !== '') {
       const response = await axios.post(API_URL, { name: newTask });
@@ -48,8 +54,6 @@ function App() {
       </ul>
     </div>
   );
-  
-
 }
 
 export default App;
