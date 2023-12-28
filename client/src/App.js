@@ -20,7 +20,6 @@ function App() {
         console.error('Error fetching tasks:', error);
     }
 };
-
   const addTask = async () => {
     if (newTask.trim() !== '') {
       const response = await axios.post(API_URL, { name: newTask });
