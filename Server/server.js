@@ -6,6 +6,7 @@ const app = express();
 const PORT = 5000;
 
 const tasks = [];
+// Enable CORS
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -23,7 +24,7 @@ app.post('/api/tasks', (req, res) => {
 });
 
 // Update a task
-app.put('/api/tasks/:id', (req, res) => {
+app.put('/api/tasks/update/:id', (req, res) => {
     const taskId = req.params.id;
     const updatedTask = req.body;
     const index = tasks.findIndex(task => task.id === taskId);
@@ -35,6 +36,7 @@ app.put('/api/tasks/:id', (req, res) => {
         res.status(404).json({ error: 'Task not found' });
     }
 });
+<<<<<<< Updated upstream
 // Delete a task
 app.delete('/api/tasks/:id', (req, res) => {
     const taskId = req.params.id;
@@ -47,6 +49,20 @@ app.delete('/api/tasks/:id', (req, res) => {
         res.status(404).json({ error: 'Task not found' });
     }
 });
+=======
+// delete a task
+
+app.delete('/api/tasks/task/:id', (req, res) => {
+    const taskId = req.params.id;
+
+    const index = tasks.findIndex(task => task.id === taskId);
+
+    const deletedTask = tasks.splice(index, 1)[0];
+    return res.status(200);
+    
+  });
+ 
+>>>>>>> Stashed changes
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
