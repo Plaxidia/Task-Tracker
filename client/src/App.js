@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/tasks';
+
+const API_URL = 'http://localhost:5002/api/tasks';
 function App() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
@@ -22,14 +23,15 @@ function App() {
 };
   const addTask = async () => {
     if (newTask.trim() !== '') {
-      const response = await axios.post(API_URL, { name: newTask });
+      const response = await axios.post(API_URL, { name: newTask, id: Math.floor(Math.random() * 100) + 1  });
       setTasks([...tasks, response.data]);
       setNewTask('');
     }
   };
   const deleteTask = async (taskId) => {
-    const response = await axios.delete(`${API_URL}/${taskId}`);
-    setTasks(tasks.filter(task => task.id !== response.data.id));
+    console.log('deleting')
+      await axios.delete(`${API_URL}/task/`+taskId);
+     
   };
   return (
     <div>
@@ -44,12 +46,18 @@ function App() {
         <button onClick={addTask}>Add</button>
       </div>
       <ul>
-        {tasks.map((task) => (
-          <li key={task.id}>
-            {task.name}
-            <button onClick={() => deleteTask(task.id)}>Delete</button>
-          </li>
-        ))}
+      {tasks.map((task) => (
+        <li key={task.id}>
+        {task.name} {/* Assuming the task object has a "name" property */}
+        <button className='delete-btn' onClick={() =>{
+          deleteTask( task.id)
+          fetchTasks()
+        }}>
+          Delete
+        </button>
+      </li>
+
+      ))}
       </ul>
     </div>
   );
