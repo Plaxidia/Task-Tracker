@@ -1,5 +1,9 @@
 
+<<<<<<< Updated upstream
 //import './App.css';
+=======
+import './App.css';
+>>>>>>> Stashed changes
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -12,6 +16,10 @@ function App() {
   useEffect(() => {
     fetchTasks();
   }, []);
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
   const fetchTasks = async () => {
     try {
         const response = await axios.get(API_URL);
@@ -35,14 +43,24 @@ function App() {
   };
   return (
     <div>
+<<<<<<< Updated upstream
       <h1>Task Tracker</h1>
       <div>
+=======
+      <div className='Container'>
+      <h1>Task Tracker</h1>
+      <div className='input-container'>
+>>>>>>> Stashed changes
         <input
           type="text"
           placeholder="Add Task"
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
         />
+<<<<<<< Updated upstream
+=======
+       
+>>>>>>> Stashed changes
         <button onClick={addTask}>Add</button>
       </div>
       <ul>
@@ -59,8 +77,18 @@ function App() {
 
       ))}
       </ul>
+<<<<<<< Updated upstream
+=======
+      </div>
+>>>>>>> Stashed changes
     </div>
   );
 }
 
 export default App;
+<<<<<<< Updated upstream
+=======
+
+
+
+>>>>>>> Stashed changes
