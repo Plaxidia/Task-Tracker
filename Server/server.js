@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const axios = require('axios');
 
 const app = express();
 const PORT = 5000;
@@ -12,8 +13,19 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Get all tasks
-app.get('/api/tasks', (req, res) => {
-    res.json(tasks);
+//app.get('/api/tasks', (req, res) => {
+//    res.json(tasks);
+//});
+
+// Get all tasks
+app.get('/api/tasks', async (req, res) => {
+    try {
+        const response = await axios.get(API_URL);
+        res.json(tasks);
+    } catch (error) {
+        console.error('Error fetching tasks:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
 });
 
 // Add a new task
@@ -37,6 +49,10 @@ app.put('/api/tasks/update/:id', (req, res) => {
     }
 });
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 // Delete a task
 app.delete('/api/tasks/:id', (req, res) => {
     const taskId = req.params.id;
@@ -49,6 +65,7 @@ app.delete('/api/tasks/:id', (req, res) => {
         res.status(404).json({ error: 'Task not found' });
     }
 });
+<<<<<<< Updated upstream
 =======
 // delete a task
 
@@ -62,6 +79,7 @@ app.delete('/api/tasks/task/:id', (req, res) => {
     
   });
  
+>>>>>>> Stashed changes
 >>>>>>> Stashed changes
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
