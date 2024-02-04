@@ -80,6 +80,7 @@ app.delete('/api/tasks/task/:id', (req, res) => {
   });
  
 >>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
