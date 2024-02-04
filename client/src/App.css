@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0.3rem auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+.Container{
+
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 27px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  background-color: #778899;
+  
+}
+h1{
+  pointer-events: none;
+  text-align: center;
+  font-size: 45px;
+
+}
+.input-container {
+  margin-bottom: 20px;
+}
+.input-container input{
+  padding: 1%;
+  width: 70%;
+  border-radius: 4px;
+  margin: 1% 2%;
+  
+
+}
+.input-container button {
+  width: 20%;
+  padding: 1%;
+  font-size: 15px;
+
+  border-radius:  4px;
+  margin: 1% 2%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ 
+}
+.input-container button:hover {
+  background-color: #0056b3;
+}
+.delete-btn {
+  border-radius: 4px;
+  font-size: 15px;
+  cursor:pointer;
+  width: 70px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.delete-btn:hover{
+  background-color: #dc3545;
+}
+li{
+  font-size: 20px;
+}
