@@ -26,24 +26,22 @@ h1{
 }
 .input-container {
   margin-bottom: 20px;
-  width: 580px;
 }
 .input-container input{
   padding: 1%;
   width: 70%;
   border-radius: 4px;
-  margin: 1% 0%;
-  margin-left: 28px;
-  margin-right: 8px;
+  margin: 1% 2%;
   
 
 }
 .input-container button {
-  width: 18.5%;
+  width: 20%;
   padding: 1%;
   font-size: 15px;
+
   border-radius:  4px;
-  
+  margin: 1% 2%;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
  
@@ -51,12 +49,11 @@ h1{
 .input-container button:hover {
   background-color: #0056b3;
 }
-.delete-btn{
-  
+.delete-btn {
   border-radius: 4px;
   font-size: 15px;
   cursor:pointer;
-  width: 60px;
+  width: 70px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .delete-btn:hover{
@@ -64,57 +61,4 @@ h1{
 }
 li{
   font-size: 20px;
-}
-
-.update-btn:hover{
-  background-color: #317a56;
-}
-
-.update-btn{
-  border-radius: 4px;
-  font-size: 15px;
-  cursor:pointer;
-  width: 60px;
-  margin-left: 20px;;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-thead{
-  
-  background-color: #ddd;
-}
-
-table{
-  position: relative;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #778899;
-  margin: 20px auto;
-  padding: 10px;
-  width: 530px;
-}
-th {
-  padding: 3px;
-   
-  text-align: left; 
-  border-radius: 4px;
-  
-}
-th, td {
-  border-bottom: 1px solid #ddd;
-}
-
-.Left-align {
-  text-align: center;
-  
-  
-}
-.Left-align_1 {
-  align-items: right;
-  right:190px;
-  
-  
-  
-  
-
 }
